@@ -5,7 +5,7 @@ The structure of the folders was made according to the evaluation criteria, the 
 1) Key concepts:
 >Definition of the baseline and scope of the project: In the following link is the DataSet that corresponds to me "Heart", which contains all the necessary information
 
-https://github.com/EdgarF9799/ProyectoFinalEFNB/blob/main/01ConceptosClave/Readme.txt
+https://github.com/EdgarF9799/ProyectoFinalEFNB/blob/main/01ConceptosClave/Readme.txt](https://github.com/EdgarF9799/ProyectoFinalEFNB/blob/main/01ConceptosClave/README.md
 
 
 >Notebook: This notebook was worked from GoogleColab and processed in VisualStudioCode, it was taken from the Kagle source and integrated some others, in the Notebook are the descriptive part of the DataSet, descriptive statistics and the prediction models that are requested in points later.
