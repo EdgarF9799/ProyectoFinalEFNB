@@ -1,0 +1,57 @@
+Pre-commit
+
+To set up pre-commits that do the tasks you've described, you'll need to use a tool called pre-commit. This tool allows you to run a series of commands automatically before committing your changes to Git.
+
+
+Step 1: Install pre-commit
+
+First, make sure you have pre-commit installed in your environment. If you don't have it installed, you can do it with the following command:
+
+bash
+
+pip install pre-commit
+
+Step 2: Create a .pre-commit-config.yaml configuration file
+
+In the root of your project, create a file called .pre-commit-config.yaml. In this file, you will define the hooks that will be executed before each commit. Here is an example configuration for the three cases you mentioned:
+
+yaml
+
+repos:
+   -repo: https://github.com/pre-commit/mirrors-autopep8
+     Rev: v1.6.0
+     hook:
+       - id: autopep8
+
+   -repo: https://github.com/pre-commit/mirrors-isort
+     Rev: v5.7.0
+     hook:
+       -id:isort
+
+   - repo: https://github.com/pre-commit/mirrors-python-black
+     rev: v21.7b0
+     hook:
+       -id: python-black
+
+   - repo: https://github.com/pre-commit/mirrors-mypy
+     rev:v0.812
+     hook:
+       -id: mypy
+
+This configuration file sets the hooks for autopep8 (for sorting and formatting imports), isort (for sorting imports), python-black (for linting and formatting), and mypy (for static type analysis). The repositories and the versions (rev) are specific to the tools we are using.
+
+Step 3: Install the pre-commit hooks
+
+Run the following command in the terminal to install the pre-commit hooks in your repository:
+
+bash
+
+pre-commit install
+
+Step 4: Make a Commit
+
+From now on, whenever you commit to your repository, pre-commit will execute the configured hooks before committing. If there are problems with the code, the hooks will try to fix them automatically or show you the problems for you to fix before committing your changes.
+
+Note: Be sure to adjust the configuration and versions of the tools in the .pre-commit-config.yaml file according to your preferences and needs.
+
+With these steps, you will have configured pre-commits to perform auto-ordering of imports, auto-deletion of unused imports, and PEP8-based linting/formatting on your project.

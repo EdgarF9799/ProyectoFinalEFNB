@@ -1,0 +1,51 @@
+First, make sure you have poetry and tox installed on your system:
+
+Step 1. Install poetry by following the instructions on its website:
+
+https://python-poetry.org/docs/#installation
+
+Install tox using pip:
+
+     pip install tox
+
+Step 2: Configuring pyproject.toml with poetry
+
+>poetry uses a pyproject.toml configuration file to manage project dependencies and configuration. Make sure you have one in the root of your project. If you don't have it, you can create it with:
+
+csharp
+
+poetry init
+
+>Add the necessary dependencies in the [tool.poetry.dependencies] section in pyproject.toml. For example:
+
+toml
+
+[tool.poetry.dependencies]
+python="^3.6"
+numpy="^1.19"
+pandas="^1.1"
+
+Step 3: Configuring tox.ini for testing with different versions of Python
+
+>Create a file called tox.ini in the root of your project and configure it to run tests with different versions of Python. Here's a basic example:
+
+ini
+
+[tox]
+envlist = py36, py37, py38
+
+[testenv]
+deps = poetry
+command =
+     poetry install -v
+     pytest
+
+>This example will run the tests in the Python 3.6, 3.7, and 3.8 virtual environments.
+
+Step 4: Run the tests with tox
+
+>In your terminal, navigate to your project folder and run:
+
+tox
+
+>tox will create separate virtual environments for each version of Python and run the tests in each of them. You can add more settings and adjust the commands according to your needs.
